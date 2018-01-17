@@ -26,7 +26,7 @@
  * ----------------------------------------------------------------------
  */
 
- 	$po_request			= $this->getVar('request');
+ 	$po_request	= $this->getVar('request');
 
     $path = $this->getVar('path');
         //realpath("D:\Programation\wamp64\www\backup");
@@ -42,7 +42,8 @@
             }
             if (is_file($files)){
                 echo'<img src="https://br.boardmakershare.com/App_Themes/Main2_0/images/topics.png" border="0" style="width:20px" /> ';
-                echo "<a href=\"".str_replace("D:\Programation\wamp64\www\backup","/backup","$files")."\">$filename </a>".': '. filesize($files).'bytes'. " <BR/>";
+                echo "<a href=\"".str_replace("D:\Programation\wamp64\www\backup","/backup","$files")."\">$filename </a>"."a été modifié le : " . date ("F d Y H:i:s.", filemtime($files)).'Taille: '. 	                      				round((filesize($files)/ 1000000)).'MB'. " <BR/>";
+
             }
 
         }
